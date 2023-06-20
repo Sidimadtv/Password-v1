@@ -18,7 +18,7 @@ body {
 
 /* Colors */
 body {
-    --bg: transparent;
+    --bg: #fff;
     --border: #696969;
     --font: #000;
     --header-button-hover: rgba(0, 0, 0, .15);
