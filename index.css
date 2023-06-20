@@ -12,13 +12,13 @@ body {
     background-color: var(--bg, #fff);
     color: var(--font, #fff);
      font-family: 'Chakra Petch', sans-serif;
-    background-image:url(https://cdn.jsdelivr.net/gh/Sidimadtv/Img/xv.png)
+    background-image:url(https://cdn.jsdelivr.net/gh/Sidimadtv/Img/xv.png);
       
 }
 
 /* Colors */
 body {
-    --bg: #fff;
+    --bg: transparent;
     --border: #696969;
     --font: #000;
     --header-button-hover: rgba(0, 0, 0, .15);
