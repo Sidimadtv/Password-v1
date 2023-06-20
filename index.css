@@ -8,10 +8,11 @@
 }
 
 body {
-    font-family: sans-serif;
+    
     background-color: var(--bg, #fff);
     color: var(--font, #fff);
-     background-image:url(https://cdn.jsdelivr.net/gh/Sidimadtv/Img/xv.png)
+     font-family: 'Chakra Petch', sans-serif;
+    background-image:url(https://cdn.jsdelivr.net/gh/Sidimadtv/Img/xv.png)
       
 }
 
