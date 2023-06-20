@@ -1,0 +1,36 @@
+header {
+    padding: 0 10px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #696969;
+}
+
+header p.title {
+    font-weight: 700;
+    font-size: 19px;
+}
+
+header .right-wrapper {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}
+
+header .header-img-button {
+    height: 37px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+header .header-img-button:hover {
+    background-color: var(--header-button-hover);
+}
+
+header .header-img-button img {
+    max-height: 32px;
+}

@@ -1,0 +1,59 @@
+@import url('./assets/css/header.css');
+@import url('./assets/css/main.css');
+@import url('./assets/css/popups.css');
+@import url('./assets/css/toasts.css');
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg, #fff);
+    color: var(--font, #fff);
+}
+
+/* Colors */
+body {
+    --bg: #fff;
+    --border: #696969;
+    --font: #000;
+    --header-button-hover: rgba(0, 0, 0, .15);
+    --button-prim: blue;
+    --button-prim-hover: #0000df;
+    --button-sec: #dba4a4;
+    --button-sec-hover: #af8888;
+    --shadow: #000;
+    --scrollbar-bg: #F2F2F2;
+    --scrollbar-thumb: #BDBDBD;
+    --scrollbar-thumb-hover: #6E6E6E;
+}
+
+body.dark {
+    --bg: #1b1b1b;
+    --border: #858585;
+    --font: #fff;
+    --header-button-hover: #3f3f3f;
+    --scrollbar-bg: #000000;
+    --scrollbar-thumb: #2e2e2e;
+    --scrollbar-thumb-hover: #575757;
+}
+
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}

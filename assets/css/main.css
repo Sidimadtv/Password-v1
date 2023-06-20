@@ -1,0 +1,212 @@
+main {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main > .password-wrapper {
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--shadow);
+    padding: 10px;
+
+    display: flex;
+    gap: 5px;
+}
+
+main > .password-wrapper > .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+}
+
+main > .password-wrapper input {
+    display: block;
+    font-size: 16px;
+    padding: 5px 8px;
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 5px 0 0 5px;
+    outline: none;
+
+    background-color: var(--bg);
+    color: var(--font);
+
+    transition: border 250ms;
+}
+
+main > .password-wrapper input:hover,
+main > .password-wrapper input:focus {
+    border: 1px solid #ffa500;
+    z-index: 1;
+}
+
+main > .password-wrapper .input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+main > .password-wrapper .input-wrapper input#domain {margin-left: 28.5px;}
+main > .password-wrapper .input-wrapper input#username {margin-left: 10px;}
+main > .password-wrapper .input-wrapper input#password {margin-left: 13px;}
+
+
+main > .password-wrapper .input-wrapper:not(:has(.side)) input {
+    border-radius: 5px;
+}
+main > .password-wrapper .input-wrapper .side {
+    border: 1px solid var(--border);
+    height: 28px;
+    aspect-ratio: 1;
+    border-radius: 0;
+    margin-left: -1px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: border 250ms;
+}
+
+main > .password-wrapper .input-wrapper .side:hover,
+main > .password-wrapper .input-wrapper .side:focus {
+    border: 1px solid #ffa500;
+    z-index: 1;
+}
+
+main > .password-wrapper .input-wrapper .side img {
+    display: block;
+    height: 22px;
+}
+
+main > .password-wrapper .input-wrapper .side:last-of-type {
+    border-radius: 0 5px 5px 0;
+}
+
+main > .password-wrapper > #delete {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main > .password-wrapper > #delete:hover {
+    background-color: #ce0000;
+}
+
+main > .password-wrapper > #delete img {
+    display: block;
+    height: 20px;
+}
+
+
+
+/* Search Box */
+
+main > .search {
+    z-index: 9;
+
+    display: flex;
+    gap: 10px;
+
+    position: sticky;
+    top: 10px;
+    left: 0;
+}
+
+main > .search input {
+    display: block;
+    font-size: 16px;
+    padding: 5px 8px;
+    width: calc(100% - 16px);
+    background-color: var(--bg);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 5px var(--shadow);
+    color: var(--font);
+}
+
+main > .search button {
+    height: 28px;
+    font-size: 17px;
+    background-color: var(--button-prim);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--shadow);
+
+    width: 160px;
+
+    cursor: pointer;
+}
+
+main > .search button:hover,
+main > .search button:focus-visible {
+    background-color: var(--button-prim-hover);
+}
+
+.searchBack {
+    height: 48px;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    background-color: var(--bg);
+    z-index: 8;
+    
+    position: fixed;
+    top: -51px;
+    left: 0;
+
+    transition: top 250ms;
+}
+
+
+/* Buttons */
+
+button.prim,
+a.prim,
+button.sec {
+    display: block;
+    font-size: 17px;
+    background-color: var(--button-prim);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 7px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+
+    box-shadow: 0 0 5px var(--button-prim);
+}
+
+button.prim:hover,
+a.prim:hover,
+button.prim:focus-visible,
+a.prim:focus-visible {
+    background-color: var(--button-prim-hover);
+}
+
+button.sec {
+    display: block;
+    background-color: var(--button-sec);
+    box-shadow: none;
+}
+
+button.sec:hover,
+button.sec:focus-visible {
+    background-color: var(--button-sec-hover);
+}
+
+/* Image switch color scheme */
+body.dark img.light {
+    display: none !important;
+}
+
+body:not(.dark) img.dark {
+    display: none !important;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+	<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+	<link rel="stylesheet" href="index.css">
+	<script src="./assets/css/jquery.js"></script>
+	<title>Password Manager</title>
+</head>
+<body>
+	<header><p class="title">Password Manager</p><div class="right-wrapper"><a href="http://wbrk.ddns.net/library/?p=passwordmanager" id="update-button" class="header-img-button" style="display: none;" title="Update Password Manager"><img src="./assets/img/upgrade_full.svg" alt="update" class="light"><img src="./assets/img/upgrade_full-white.svg" alt="update" class="dark"></a><div class="header-img-button" onclick="addPasswordPopup()"><img src="./assets/img/add_full.svg" alt="settings" class="light"><img src="./assets/img/add_full-white.svg" alt="settings" class="dark"></div><div class="header-img-button" onclick="popups(0, 'settings')"><img src="./assets/img/cog_full.svg" alt="settings" class="light"><img src="./assets/img/cog_full-white.svg" alt="settings" class="dark"></div></div></header>
+	<main>
+		<div class="search" id="search"><input type="text" placeholder="Search..." onchange="search()" onkeypress="search()" oninput="search()"><button style="display: none;" onclick="saveJson()">Save Changes</button></div>
+		
+	</main>
+	<div class="searchBack"></div>
+
+	<popups>
+		<popup id="confirmSave">
+			<p class="title">Save Changes</p>
+			<p class="desc">Before you continue you should save your changes.</p>
+			<div class="flex"><button class="sec" id="hidePopup">Cancel</button><button class="prim" id="submit" onclick="saveJson(); popups(0, 'addPassword')">Save Changes</button></div>
+		</popup>
+		<popup id="addPassword">
+			<p class="title">Add Password</p>
+			<input type="text" id="domain" placeholder="Domain">
+			<input type="text" id="username" placeholder="Username/Email">
+			<input type="text" id="password" placeholder="Password">
+			<div class="flex"><button class="sec" id="hidePopup">Cancel</button><button class="prim" id="submit">Save</button></div>
+			<button class="prim" id="submit2">Save & add another</button>
+		</popup>
+		<popup class="big" id="settings">
+			<header><p class="title">Settings</p><div class="right-wrapper"><div class="header-img-button" onclick="popups()"><img src="./assets/img/add_full.svg" alt="close" style="transform: rotateZ(45deg);" class="light"><img src="./assets/img/add_full-white.svg" alt="close" style="transform: rotateZ(45deg);" class="dark"></div></div></header>
+			<main>
+				<div class="section">
+					<p class="section-title">Import or Export your passwords.</p>
+					<div class="flex"><button class="prim" id="import" style="max-width: 300px; box-shadow: none;">Import</button><button class="prim" id="export" style="max-width: 300px; box-shadow: none;">Export</button></div>
+				</div>
+				<div class="section" id="theme">
+					<p class="section-title">Theme</p>
+					<div class="flex"><input type="radio" name="theme" id="light" style="width: auto;"><p>Light</p></div>
+					<div class="flex"><input type="radio" name="theme" id="dark" style="width: auto;"><p>Dark</p></div>
+				</div>
+			</main>
+		</popup>
+		<popup id="import-passwords">
+			<p class="title">Import Passwords</p>
+			<input type="text" id="import" placeholder="Passwords">
+			<div class="flex"><button class="sec" id="hidePopup">Cancel</button><button class="prim" id="submit">Append</button></div>
+			<div class="flex"><button class="prim" id="submit" data-type="replace">Replace</button></div>
+		</popup>
+		<popup id="update">
+			<p class="title">Update Available!</p>
+			<p class="desc">There is an update available.</p>
+			<div class="flex"><button class="sec" id="hidePopup">Cancel</button><a href="http://wbrk.ddns.net/library/?p=passwordmanager" class="prim" id="submit">Update</a></div>
+		</popup>
+		<popup id="update-required">
+			<p class="title">Required Update Available!</p>
+			<p class="desc">There is a required update available.</p>
+			<div class="flex"><a href="http://wbrk.ddns.net/library/?p=passwordmanager" class="prim" id="submit">Update</a></div>
+		</popup>
+	</popups>
+	<toasts style="display: none;">
+		<toast id="no-img" style="display: none;">
+			<p id="input">Placeholder</p>
+		</toast>
+	</toasts>
+
+</body>
+<script src="index.js" defer></script>
+<script src="./assets/css/popups.js" defer></script>
+<script src="./assets/css/toasts.js" defer></script>
+</html>

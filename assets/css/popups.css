@@ -1,0 +1,98 @@
+popups {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 10;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+popups > popup {
+    background-color: var(--bg);
+    padding: 10px;
+    border-radius: 10px;
+    max-width: max(20%, 300px);
+    box-shadow: 0 0 10px var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+popups > popup p.title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+popups > popup p.desc {
+    text-align: center;
+}
+
+popups > popup .flex {
+    display: flex;
+    gap: 10px;
+}
+
+popups > popup .flex button,
+popups > popup .flex a {
+    flex: 1 1 0px;
+}
+
+popups > popup input {
+    display: block;
+    font-size: 16px;
+    padding: 5px 8px;
+    border: 1px solid #696969;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+    box-sizing: border-box;
+
+    color: var(--font);
+    background-color: var(--bg);
+
+    transition: border 250ms;
+}
+
+popups > popup.big {
+    width: calc(100% - 40px);
+    max-width: unset;
+    height: calc(100vh - 40px);
+    overflow: hidden;
+}
+
+popups > popup.big header {
+    height: 40px;
+}
+
+popups > popup.big main {
+    overflow: hidden auto;
+    height: calc(100% - 61px);
+}
+
+popups > popup:has(main) {
+    padding: 0;
+    display: block;
+}
+
+popups > popup .section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 0 10px 0;
+}
+
+popups > popup .section:not(:last-of-type) {
+    border-bottom: 1px solid #696969;
+}
+
+popups > popup .section p.section-title {
+    font-weight: 700;
+    font-size: 16px;
+}
